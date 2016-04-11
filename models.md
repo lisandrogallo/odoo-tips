@@ -13,3 +13,17 @@ def unlink(self):
             "You are trying to delete a record that is still referenced!"))
     return super(Model, self).unlink()
 ```
+
+## Redefining name_search() function (on API v8)
+
+```python
+@api.model
+def name_search(self, name, args=None, operator='ilike', limit=100):
+    # For example, to change the domain in search
+    args.extend([('field','=',True)])
+    return super(Model, self).name_search(
+        name=name,
+        args=args,
+        operator=operator,
+        limit=limit)
+```
