@@ -9,3 +9,9 @@ In XML side ```< > <= >=``` are not supported, so we need to use ```&lt; &gt; &l
     <field name="due_date"/>
 </tree>
 ```
+
+### Domain filter based in date/time delta
+
+```xml
+<field name="domain">[('date', '&gt;', (context_today().strftime('%Y-%m-%d'))), ('date', '&lt;', ((context_today()+datetime.timedelta(days=365)).strftime('%Y-%m-%d')))]</field>
+```
