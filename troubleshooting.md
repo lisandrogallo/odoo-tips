@@ -13,6 +13,8 @@ openerp.addons.base.ir.ir_model: Deleting 31934@module.model
 
 This happens if you chooses an external id that is part of another model by using the period (e.g. 'product.external_id'). To solve this issue, find the external id in the Postgres table **ir_model_data** and delete it, or choose another external id format.
 
+*Tip: To check if it works you can group or filter data using context values passed to a window action.*
+
 ##  Translation of terms of base modules does not work
 
 To modify the translation of a base module, export the translation as usual and translate the terms. Then update the module:
