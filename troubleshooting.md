@@ -28,11 +28,3 @@ After that, press F5 to refresh the browser, then go to Settings > Translations 
 In your custom module (which modifies the base translation) edit the **__openerp__.py** and add:
 
     'sequence': 150
-
-## Installation
-
-### Could not execute command 'lessc' error
-
-    apt install nodejs
-    sudo npm install -g less
-    sudo npm install -g less-plugin-clean-css
