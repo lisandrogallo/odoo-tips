@@ -15,7 +15,7 @@ This happens if you chooses an external id that is part of another model by usin
 
 *Tip: To check if it works you can group or filter data using context values passed to a window action.*
 
-##  Translation of terms of base modules does not work
+## Translation of terms of base modules does not work
 
 To modify the translation of a base module, export the translation as usual and translate the terms. Then update the module:
 
@@ -28,3 +28,11 @@ After that, press F5 to refresh the browser, then go to Settings > Translations 
 In your custom module (which modifies the base translation) edit the **__openerp__.py** and add:
 
     'sequence': 150
+
+## Installation
+
+### Could not execute command 'lessc' error
+
+    apt install nodejs
+    sudo npm install -g less
+    sudo npm install -g less-plugin-clean-css
