@@ -33,6 +33,6 @@ In your custom module (which modifies the base translation) edit the **__openerp
 
 ### Could not execute command 'lessc' error
 
-    apt install nodejs
+    apt install nodejs-legacy
     sudo npm install -g less
     sudo npm install -g less-plugin-clean-css
