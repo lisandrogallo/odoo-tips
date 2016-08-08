@@ -29,6 +29,32 @@ In your custom module (which modifies the base translation) edit the **__openerp
 
     'sequence': 150
 
+  File "/home/liso/code/odoo/repos/8.0/odoo-argentina/l10n_ar_bank/wizard/cache.py", line 14, in <module>
+    gc = geocoders.Google('ABQIAAAAMWm7ddpoRV3HO0u7NtA_IhRTfPMBNX3pvExQyYBKj7aZZJK5lxQYw0LDgWXedvepzKpGxQKf-kmN3A')
+
+## Errors restoring database from dump
+
+Errors:
+
+```python
+raise Exception('Command `%s` not found.' % name)
+Exception: Command `pg_restore` not found.
+```
+```python
+raise Exception('Postgres subprocess %s error %s' % (args2, rc))
+Exception: Postgres subprocess ('/usr/bin/pg_restore', '--username=odoo', '--host=localhost', u'--dbname=sgi_02', '--no-owner', '/tmp/tmpxTpUyL') error 1
+```
+
+Solution:
+
+Install the *pg_restore* version that fits the PostgresSQL version used to dump the database:
+
+    wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+    sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main" >> /etc/apt/sources.list.d/postgresql.list'
+
+    apt update
+    apt install postgres-client-9.3
+
 ## Installation
 
 ### Could not execute command 'lessc' error
