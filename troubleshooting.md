@@ -42,7 +42,7 @@ Exception: Command `pg_restore` not found.
 ```
 ```python
 raise Exception('Postgres subprocess %s error %s' % (args2, rc))
-Exception: Postgres subprocess ('/usr/bin/pg_restore', '--username=odoo', '--host=localhost', u'--dbname=sgi_02', '--no-owner', '/tmp/tmpxTpUyL') error 1
+Exception: Postgres subprocess ('/usr/bin/pg_restore', '--username=odoo', '--host=localhost', u'--dbname=dbname', '--no-owner', '/tmp/tmpxTpUyL') error 1
 ```
 
 Solution:
@@ -54,6 +54,33 @@ Install the *pg_restore* version that fits the PostgresSQL version used to dump 
 
     apt update
     apt install postgres-client-9.3
+
+## 'Invalid view definition' migrating modules
+
+Error:
+
+```python
+ParseError: "Invalid view definition
+
+Error details:
+View inheritance may not use attribute 'string' as a selector.
+```
+
+Solution:
+
+Now in Odoo 9 using *string* as selector in XPATH is not allowed. Instead of this you can use *id* or *name*:
+
+    <page name="page" position="replace"/>
+
+or
+
+    <xpath expr="//group" position="after">
+
+or
+
+    <xpath expr="/FULL_XML_TREE/group" position="after">
+
+
 
 ## Installation
 
