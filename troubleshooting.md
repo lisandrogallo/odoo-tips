@@ -59,6 +59,20 @@ apt update
 apt install postgres-client-9.3
 ```
 
+## Database backup with 0 bytes size
+
+Error:
+
+You are getting a 0 bytes size dump or having the following error:
+
+```
+Exception: Postgres subprocess ('/usr/bin/pg_dump', '--no-owner', '--file=/tmp/tmpVtzIfN/dump.sql', u'database') error 1
+```
+
+Solution:
+
+`pg_dump` command version mismatch Postgres version running on server. Install the appropriate `postgres-client-9*` version.
+
 ## 'Invalid view definition' migrating modules
 
 Error:
