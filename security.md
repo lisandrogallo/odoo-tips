@@ -23,3 +23,39 @@
     </field>
 </record>
 ```
+
+### Hide definitely menus and elements
+
+Create a group with no members:
+
+```xml
+<record id="make_invisible" model="res.groups">
+    <field name="name">Invisible</field>
+</record>
+```
+
+Hiding a menu item:
+
+```xml
+<!-- HIDE CONTACTS -->
+<record model="ir.ui.menu" id="base.menu_base_partner">
+    <field name="groups_id" eval="[(6,0,[ref('make_invisible')])]"/>
+</record>
+```
+
+Hiding a web element from a template:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <!-- HIDE SYSTRAY -->
+        <template id="web.menu_custom"
+            inherit_id="web.menu">
+            <xpath expr="//ul[@class='nav navbar-nav navbar-right oe_systray']" position="attributes">
+                <attribute name="groups">module.group_invisible</attribute>
+            </xpath>
+        </template>
+    </data>
+</openerp>
+```
