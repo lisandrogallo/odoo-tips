@@ -104,6 +104,18 @@ or
 <xpath expr="/FULL_XML_TREE/group" position="after">
 ```
 
+## 'Sender address rejected' when sending mail from Odoo
+
+Error:
+
+```
+(504, '5.5.2 <postmaster-odoo@localhost>: Sender address rejected: need fully-qualified address')
+```
+
+Solution:
+
+Remove all catchall parameters (_mail.catchall.domain_ and _mail.catchall.alias_) under _"Settings" > "Technical" > "Parameters" > "System Parameters"_ does the trick.
+
 ## Installation
 
 ### Could not execute command 'lessc' error
