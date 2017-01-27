@@ -11,7 +11,7 @@ npm install -g nodemon
 Run **nodemon** watching for changes on an addon:
 
 ```
-nodemon --watch <addon_path> -e py,xml --exec "odoo.py -c odoo-9.conf -u <addon>"
+nodemon --watch <addon_path> -e py,xml --exec "./odoo-bin -c ../odoo-10.conf -u <addon>"
 ```
 
 ## Docker container for Odoo database
