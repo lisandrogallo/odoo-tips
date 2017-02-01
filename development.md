@@ -10,6 +10,14 @@ npm install -g nodemon
 
 Run **nodemon** watching for changes on an addon:
 
+> Odoo version 8 or 9
+
+```
+nodemon --watch <addon_path> -e py,xml --exec "odoo.py -c odoo.conf -u <addon>"
+```
+
+> Odoo version 10 or later
+
 ```
 nodemon --watch <addon_path> -e py,xml --exec "./odoo-bin -c ../odoo-10.conf -u <addon>"
 ```
