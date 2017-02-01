@@ -75,6 +75,8 @@ Solution:
 
 ## 'Invalid view definition' migrating modules
 
+> Odoo version 9 or later
+
 Error:
 
 ```python
@@ -119,6 +121,8 @@ Remove all catchall parameters (_mail.catchall.domain_ and _mail.catchall.alias_
 ## Installation
 
 ### Could not execute command 'lessc' error
+
+> Odoo version 9 or later
 
 ```
 apt install nodejs-legacy
