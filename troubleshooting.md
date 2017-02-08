@@ -118,6 +118,12 @@ Solution:
 
 Remove all catchall parameters (_mail.catchall.domain_ and _mail.catchall.alias_) under _"Settings" > "Technical" > "Parameters" > "System Parameters"_ does the trick.
 
+## "unknown comodel_name 'module.model'"
+
+Solution:
+
+In `__openerp.py__` add the 'module' string in the 'depend' list.
+
 ## Installation
 
 ### Could not execute command 'lessc' error
