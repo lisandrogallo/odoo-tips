@@ -124,6 +124,21 @@ Solution:
 
 In `__openerp.py__` add the 'module' string in the 'depend' list.
 
+## 'http' Python module ImportError with some base modules
+
+Error:
+```
+File "/opt/odoo/server/addons/board/__init__.py", line 24, in <module>
+File "/opt/odoo/server/addons/board/controllers/__init__.py", line 4, in <module>
+File "/opt/odoo/server/addons/board/controllers/main.py", line 6, in <module>
+
+ImportError: No module named http
+```
+
+Solution:
+
+Go to the module directory and remove .pyc files like **__init__.pyc** and/or **main.pyc**
+
 ## Installation
 
 ### Could not execute command 'lessc' error
