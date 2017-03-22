@@ -55,7 +55,16 @@ db_port = 5432
 
 Run migrator script:
 
+> Odoo version 8 or 9
+
 ```
 wget https://raw.githubusercontent.com/OCA/OpenUpgrade/HEAD/scripts/migrate.py
-python migrate.py --config=odoo-8.conf --database=<database> --run-migrations=8.0,9.0 --branch-dir=/tmp/open-upgrade
+python migrate.py --config=odoo-8.conf --database=<database-odoo-8> --run-migrations=9.0 --branch-dir=/tmp/open-upgrade
+```
+
+> Odoo version 10 or later
+
+```
+wget https://raw.githubusercontent.com/OCA/OpenUpgrade/10.0/scripts/migrate.py
+python migrate.py --config=odoo-9.conf --database=<database-odoo-9> --run-migrations=10.0 --branch-dir=/tmp/open-upgrade
 ```
