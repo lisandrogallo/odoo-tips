@@ -59,6 +59,20 @@ apt update
 apt install postgres-client-9.3
 ```
 
+## Error creating a new database
+
+> Odoo version 10
+
+Error:
+```
+ProgrammingError: column res_lang.active does not exist
+LINE 1: SELECT count(1) FROM "res_lang" WHERE ("res_lang"."active" =...
+```
+
+Solution:
+
+Check if there is any addon with an empty **\__manifest__.py** file and complete it.
+
 ## Database backup with 0 bytes size
 
 Error:
