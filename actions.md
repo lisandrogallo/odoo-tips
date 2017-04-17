@@ -12,3 +12,15 @@ def open_url(self):
         'nodestroy': True,
     }
 ```
+
+## Action declaration to open URL on a new tab
+
+```
+<!-- URL ACTION -->
+<record model="ir.actions.act_url" id="action_siat_website">
+    <field name="name">Name</field>
+    <field name="view_mode">tree,form</field>
+    <field name="target">new</field>
+    <field name="url">www.example.com</field>
+</record>
+```
