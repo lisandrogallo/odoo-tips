@@ -27,3 +27,12 @@ def name_search(self, name, args=None, operator='ilike', limit=100):
         operator=operator,
         limit=limit)
 ```
+
+## Set current user as default
+
+```python
+user_id = fields.Many2one(
+    comodel_name='res.users',
+    default=lambda self: self.env.user
+)
+```
