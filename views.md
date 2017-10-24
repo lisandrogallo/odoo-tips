@@ -21,3 +21,11 @@ In XML side `< > <= >=` are not supported, so we need to use `< > ≤ ≥` inste
 ```xml
 <field name="domain">[('date', '>', (context_today().strftime('%Y-%m-%d'))), ('date', '<', ((context_today()+datetime.timedelta(days=365)).strftime('%Y-%m-%d')))]</field>
 ```
+
+## Changing attrs based on an empty many2many relation
+
+`False` or `None` comparison will not work.
+
+```xml
+<field name="name" attrs="{'invisible': [('field_ids', '=', [])]}">
+```
