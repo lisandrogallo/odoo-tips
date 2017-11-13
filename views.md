@@ -29,3 +29,18 @@ In XML side `< > <= >=` are not supported, so we need to use `< > ≤ ≥` inste
 ```xml
 <field name="name" attrs="{'invisible': [('field_ids', '=', [])]}">
 ```
+
+## List of options for decoration attribute
+
+```xml
+<tree decoration-it="field=='value'">
+```
+
+- decoration-bf: BOLD
+- decoration-it: ITALICS
+- decoration-danger: LIGHT RED
+- decoration-info: LIGHT BLUE
+- decoration-muted: LIGHT GRAY
+- decoration-primary: LIGHT PURPLE
+- decoration-success: LIGHT GREEN
+- decoration-warning: LIGHT BROWN
