@@ -24,3 +24,19 @@ def open_url(self):
     <field name="url">www.example.com</field>
 </record>
 ```
+
+## Action flags
+
+- initial_mode: 'view' or 'edit'
+- mode: 'view' or 'edit'
+
+For example:
+
+```
+'flags': {
+    'initial_mode': 'view',
+    'form': {
+        'options': {'mode': 'view'},
+        'action_buttons': True
+    }
+```
