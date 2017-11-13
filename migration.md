@@ -68,3 +68,13 @@ python migrate.py --config=odoo-8.conf --database=<database-odoo-8> --run-migrat
 wget https://raw.githubusercontent.com/OCA/OpenUpgrade/10.0/scripts/migrate.py
 python migrate.py --config=odoo-9.conf --database=<database-odoo-9> --run-migrations=10.0 --branch-dir=/tmp/open-upgrade
 ```
+
+## 'oldname' attribute on fields
+
+'oldname' is the attribute used at time of migration. It is the previous name of the field, so that ORM can rename it automatically at migration.
+
+```python
+new_field_name = fields.Char(
+    oldname='old_field_name'
+    )
+```
