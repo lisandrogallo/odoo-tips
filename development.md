@@ -22,13 +22,24 @@ nodemon --watch <addon_path> -e py,xml --exec "odoo.py -c odoo.conf -u <addon>"
 nodemon --watch <addon_path> -e py,xml --exec "./odoo-bin -c ../odoo-10.conf -u <addon>"
 ```
 
+Listen uses inotify by default on Linux to monitor directories for changes. If you get an error like `OSError: inotify watch limit reached` you must set a new watch limit.
+
+You can get your current inotify file watch limit by executing:
+
+    cat /proc/sys/fs/inotify/max_user_watches
+
+To make a new limit permanent:
+
+    echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf
+    sudo sysctl -p
+
 ## Docker container for Odoo database
 
 ```
 docker run --detach -e POSTGRES_USER=odoo -e POSTGRES_PASSWORD=odoo --name odoo_db --publish=5432:5432 --restart=always postgres:9.4
 ```
 
-## Using Pylint Odoo plugin
+## Pylint Odoo plugin to enable custom checks for modules
 
 Custom checks for Odoo modules: <https://github.com/oca/pylint-odoo>
 
