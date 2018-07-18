@@ -33,10 +33,14 @@ To make a new limit permanent:
     echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf
     sudo sysctl -p
 
+```
+./odoo-bin -c ../odoo-10.conf --dev=all
+```
+
 ## Docker container for Odoo database
 
 ```
-docker run --detach -e POSTGRES_USER=odoo -e POSTGRES_PASSWORD=odoo --name odoo_db --publish=5432:5432 --restart=always postgres:9.4
+docker run --detach -e POSTGRES_USER=odoo -e POSTGRES_PASSWORD=odoo --name odoo_db --publish=5432:5432 --restart=always postgres:latest
 ```
 
 ## Pylint Odoo plugin to enable custom checks for modules
