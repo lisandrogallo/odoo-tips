@@ -87,6 +87,10 @@ Solution:
 
 `pg_dump` command version mismatch Postgres version running on server. Install the appropriate `postgres-client-9*` version.
 
+## Database restore error: Command `psql` not found
+
+Install `postgresql-client` package.
+
 ## 'Invalid view definition' migrating modules
 
 > Odoo version 9 or later
