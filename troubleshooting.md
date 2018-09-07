@@ -168,3 +168,12 @@ apt install nodejs-legacy
 sudo npm install -g less
 sudo npm install -g less-plugin-clean-css
 ```
+
+### Password authentication failed for user 'postgres' using pgAdmin
+
+Need to set a password to 'postgres' user:
+
+```
+sudo -u postgres psql postgres
+alter user postgres with password 'postgres';
+```
