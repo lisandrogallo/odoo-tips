@@ -58,3 +58,34 @@ Run tests:
 ```
 pylint --load-plugins=pylint_odoo -d all -e odoolint {ADDONS-PATH}
 ```
+
+## Debugging with pdb
+
+Import pdb module:
+```python
+import pdb
+```
+
+Set breakpoint on code:
+```python
+pdb.set_trace()
+```
+
+Run Odoo in development mode:
+```
+./odoo-bin -c odoo-10.conf --dev=all
+```
+
+| Shortcut | Action |
+|---|---|
+| a | Print the argument list of the current | function |
+| b | Creates a breakpoint (requires parameters) in the program execution |
+| c | Continues program execution |
+| h | Provides list of commands or help for a specified command |
+| j | Set the next line to be executed |
+| l | Print the source code around the current line |
+| n | Continue execution until the next line in the current function is reached or returns |  
+| s | Execute the current line, stopping at first possible occasion |  
+| pp| Pretty-prints the value of the expression |  
+| q | Aborts the program |  
+| r | Continue execution until the current function returns |
