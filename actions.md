@@ -40,3 +40,11 @@ For example:
         'action_buttons': True
     }
 ```
+
+## Define specific (not default) views in window action
+
+```xml
+<field name="view_ids" eval="[(5, 0, 0),
+    (0, 0, {'view_mode': 'tree', 'view_id': ref('xml.id.of.tree.view')}),
+    (0, 0, {'view_mode': 'form', 'view_id': ref('xml.id.of.form.view')})]"/>
+```
