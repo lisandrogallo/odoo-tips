@@ -43,6 +43,11 @@ To make a new limit permanent:
 docker run --detach -e POSTGRES_USER=odoo -e POSTGRES_PASSWORD=odoo --name odoo_db --publish=5432:5432 --restart=always postgres:latest
 ```
 
+> Odoo 13
+```bash
+docker run --detach -e POSTGRES_USER=odoo -e POSTGRES_PASSWORD=odoo -e POSTGRES_DB=postgres --name odoo_db --publish=5432:5432 --restart=always postgres:latest
+```
+
 ## Pylint Odoo plugin to enable custom checks for modules
 
 Custom checks for Odoo modules: <https://github.com/oca/pylint-odoo>
