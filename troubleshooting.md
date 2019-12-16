@@ -33,6 +33,10 @@ In your custom module (which modifies the base translation) edit the `__openerp_
 'sequence': 150
 ```
 
+## Translation of some terms does not work (Odoo 13)
+
+Remove the option `--dev=all` from the odoo-bin command. This option prevent the translation to work completely.
+
 ## Errors restoring database from dump
 
 Errors:
