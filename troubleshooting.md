@@ -95,6 +95,14 @@ Solution:
 
 Install `postgresql-client` package.
 
+## Database dump error: Command `pg_dump` not found
+
+In Ubuntu, if you install Postgresql with apt, the path to binary should be `/usr/lib/postgresql/12/bin/` and it has to be declare in Odoo's configuration as below:
+
+```conf
+pg_path = /usr/lib/postgresql/12/bin/
+```
+
 ## 'Invalid view definition' migrating modules
 
 > Odoo version 9 or later
