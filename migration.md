@@ -78,3 +78,16 @@ new_field_name = fields.Char(
     oldname='old_field_name'
     )
 ```
+
+## Import 'create_uid', 'create_date', 'write_uid' and 'write_date' fields
+
+On destination model create these temporary fields:
+
+```python
+    create_date_tmp = fields.Datetime()
+    write_date_tmp = fields.Datetime()
+    create_uid_tmp = fields.Many2one(comodel_name="res.users")
+    write_uid_tmp = fields.Many2one(comodel_name="res.users")
+```
+
+Then import data to these new fields (ensure to import data with 'external ID' option), browse the database using Pgadmin or Adminer and rename the fields as the definitive ones.
